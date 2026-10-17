@@ -15,6 +15,6 @@ Este repositorio tiene un concepto de landing page para resolver la falta de inf
 ---
 
 ## Estructura
-- La documentación del proyecto está en `docs/Reporte de Sprint 1 - Grupo 1.pdf`.
-- Las evidencias del proyecto están en `docs/evidencias/`.
+- La documentación del proyecto está en `documentos/Reporte de Sprint 1 - Grupo 1.pdf`.
+- Las evidencias del proyecto están en `documentos/evidencias/`.
 - Los demás archivos y carpetas corresponden a la plantilla.
