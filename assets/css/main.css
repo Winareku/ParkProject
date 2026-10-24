@@ -4139,3 +4139,488 @@ input[type="submit"]:hover, input[type="reset"]:hover { box-shadow: 0 14px 26px 
   .wrapper.style2 article#main img, .button, button { transition: none !important; }
 }
 
+
+
+/* =====================================================================
+   PARQUE FORESTAL DE GUAYAQUIL - VERSION FINAL V3
+   Capa de acabado sobre la V2, sin modificar HTML ni JavaScript.
+   Secciones: portada, actividades, contenido y footer panorámico.
+   ===================================================================== */
+
+:root {
+  --v3-forest: #153c2c;
+  --v3-deep: #0a251d;
+  --v3-leaf: #337d53;
+  --v3-sand: #f7f2e5;
+  --v3-honey: #ebbf76;
+  --v3-ink: #183a2b;
+}
+
+/* Transiciones discretas y acabados generales */
+body.homepage { background-color: #f8f8f1; }
+body.homepage #page-wrapper { overflow: clip; }
+body.homepage ::selection { background: #317652; color: #fff; }
+body.homepage a, body.homepage .button { -webkit-tap-highlight-color: transparent; }
+
+body.homepage #header {
+  background-image:
+    linear-gradient(96deg, rgba(8,34,25,.89) 0%, rgba(11,44,32,.61) 44%, rgba(12,42,30,.18) 100%),
+    url('../../images/header.jpeg');
+}
+body.homepage #header .inner:before {
+  border-color: rgba(242,215,159,.5);
+  background: rgba(8,39,28,.51);
+}
+body.homepage #header h1 { text-shadow: 0 12px 32px rgba(0, 20, 13, .22); }
+body.homepage #header .button.circled {
+  border: 1px solid rgba(255, 230, 173, .52);
+  background: linear-gradient(130deg, #f1cd91, #e9b86a);
+  box-shadow: 0 12px 28px rgba(4,27,17,.26), inset 0 1px 0 rgba(255,255,255,.38);
+  transition: transform .24s ease, box-shadow .24s ease, background .24s ease;
+}
+body.homepage #header .button.circled:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 19px 34px rgba(4,27,17,.31), inset 0 1px 0 rgba(255,255,255,.44);
+}
+body.homepage #banner {
+  background: radial-gradient(ellipse at 84% 18%, rgba(220,230,196,.28), transparent 45%), #fbf9f1;
+}
+body.homepage #banner header::before,
+body.homepage #features > header::before { color: #397f56; }
+
+/* Carrusel: tarjetas consistentes y fotografías protagonistas */
+body.homepage .carousel {
+  background: linear-gradient(155deg, #eaf3e8 0%, #eef4e7 67%, #f5f3e8 100%);
+}
+body.homepage .carousel article {
+  border: 1px solid rgba(40,99,63,.1);
+  background: #fffdf7;
+  box-shadow: 0 17px 30px rgba(15,63,38,.09);
+}
+body.homepage .carousel article:hover { box-shadow: 0 23px 46px rgba(14,59,38,.17); }
+body.homepage .carousel article .image.featured {
+  overflow: hidden;
+  background: #d8e9d6;
+}
+body.homepage .carousel article .image.featured img { filter: saturate(.97) contrast(1.035); }
+body.homepage .carousel article:hover .image.featured img { filter: saturate(1.12) contrast(1.06); }
+
+/* Imagen + relato: separación elegante y borde fino */
+body.homepage .wrapper.style2 article#main {
+  border: 1px solid rgba(26,88,51,.095);
+  box-shadow: 0 27px 68px rgba(21,53,33,.12);
+}
+body.homepage .wrapper.style2 article#main > .image.featured { border-radius: 26px 0 0 26px; }
+body.homepage #features article.special {
+  overflow: hidden;
+  border: 1px solid rgba(33,94,55,.14);
+  background: #fffefa;
+}
+body.homepage #features article.special > .image.featured { border-radius: 0; }
+body.homepage #features article h3 a { transition: color .2s ease; }
+body.homepage #features article h3 a:hover { color: #288055; }
+
+/* =================== FOOTER FINAL V3 =================== */
+body.homepage #footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0 clamp(1rem, 3vw, 3rem) 2.3rem;
+  color: #edf5ed;
+  background:
+    radial-gradient(ellipse at 94% 70%, rgba(55,105,74,.32), transparent 34%),
+    radial-gradient(ellipse at 6% 86%, rgba(30,89,61,.44), transparent 35%),
+    linear-gradient(155deg, #153f2f 0%, #081e19 100%);
+}
+/* Panorámica superior: usa la fotografía local ya incluida en el proyecto. */
+body.homepage #footer::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 auto;
+  height: clamp(275px, 27vw, 395px);
+  background:
+    linear-gradient(to bottom, rgba(8,37,27,.08), rgba(7,35,26,.34) 38%, rgba(8,31,23,.92) 100%),
+    url('../../images/wide01.jpeg') center 51% / cover no-repeat;
+  opacity: .99;
+  pointer-events: none;
+}
+body.homepage #footer::after {
+  content: 'PARQUE FORESTAL  /  GUAYAQUIL';
+  position: absolute;
+  z-index: 1;
+  top: clamp(2.7rem, 7vw, 5.5rem);
+  left: max(1.6rem, calc((100vw - 1190px) / 2));
+  max-width: calc(100% - 3rem);
+  padding: .72rem 1rem;
+  border: 1px solid rgba(244,231,195,.48);
+  border-radius: 999px;
+  background: rgba(7,39,27,.56);
+  color: #fff7e4;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-weight: 700;
+  font-size: .79rem;
+  letter-spacing: .14em;
+  line-height: 1.25;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  pointer-events: none;
+}
+body.homepage #footer > .container {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1220px);
+  padding-top: clamp(205px, 20vw, 290px);
+  margin: 0 auto;
+}
+/* Tres módulos contenidos en una sola pieza clara, contrastante. */
+body.homepage #footer > .container > .row:first-child {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, .94fr) minmax(0, 1.16fr);
+  column-gap: clamp(1.6rem, 3.8vw, 4.2rem);
+  row-gap: 1.8rem;
+  align-items: start;
+  width: 100%;
+  margin: 0;
+  padding: clamp(1.6rem, 3.8vw, 3.6rem);
+  border: 1px solid rgba(239,232,207,.84);
+  border-radius: clamp(20px, 2.6vw, 32px);
+  background: linear-gradient(142deg, #fffdf6 0%, #f7f7ec 100%);
+  box-shadow: 0 30px 65px rgba(0,24,13,.31), inset 0 1px 0 rgba(255,255,255,.85);
+}
+body.homepage #footer > .container > .row:first-child > section {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #43584a;
+}
+body.homepage #footer > .container > .row:first-child > section > header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .55rem;
+  min-height: 0;
+  margin: 0 0 1.3rem;
+  text-align: left;
+}
+/* Números de sección CSS: funcionan incluso sin fuentes de iconos. */
+body.homepage #footer > .container > .row:first-child > section .icon.circled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(34,99,61,.19);
+  border-radius: 12px;
+  background: #e4eddf;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+  color: #245f43;
+}
+body.homepage #footer > .container > .row:first-child > section .icon.circled::before {
+  content: '01';
+  color: #2b7550;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+body.homepage #footer > .container > .row:first-child > section:nth-child(2) .icon.circled::before { content: '02'; }
+body.homepage #footer > .container > .row:first-child > section:nth-child(3) .icon.circled::before { content: '03'; }
+body.homepage #footer > .container > .row:first-child > section > header::after {
+  margin: .45rem 0 0;
+  color: #153f2e;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.18rem, 1.55vw, 1.5rem);
+  letter-spacing: -.035em;
+  line-height: 1.25;
+  text-align: left;
+}
+body.homepage #footer > .container > .row:first-child > section > header::before {
+  content: '';
+  display: block;
+  order: 3;
+  width: 38px;
+  height: 3px;
+  margin: .2rem 0 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #dbad57, #e9d7aa);
+}
+/* Lista de información práctica */
+body.homepage #footer ul.divided { margin: 0; padding: 0; }
+body.homepage #footer ul.divided > li {
+  position: relative;
+  margin: 0;
+  padding: .88rem .45rem .88rem 1.45rem;
+  border-bottom: 1px solid rgba(33,82,53,.11);
+  color: #445e4d;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+body.homepage #footer ul.divided > li:last-child { border-bottom: none; }
+body.homepage #footer > .container > .row:first-child > section:first-child ul.divided > li::before {
+  content: '';
+  position: absolute;
+  top: 1.37rem;
+  left: .15rem;
+  width: .52rem;
+  height: .52rem;
+  border: 2px solid #3c9260;
+  border-radius: 50%;
+  background: #d8ebd2;
+}
+/* Enlaces rápidos legibles e indicadores sutiles */
+body.homepage #footer .post.stub,
+body.homepage #footer .post.stub h3 { margin: 0; text-align: left; }
+body.homepage #footer .post.stub h3 a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  width: 100%;
+  color: #23563c;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+body.homepage #footer .post.stub h3 a::after {
+  content: '↗';
+  flex: 0 0 auto;
+  color: #7f9a7f;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform .2s ease, color .2s ease;
+}
+body.homepage #footer .post.stub h3 a:hover { color: #238250; }
+body.homepage #footer .post.stub h3 a:hover::after { transform: translate(2px, -2px); color: #238250; }
+/* Mini galería de fotografías del parque */
+body.homepage #footer > .container > .row:first-child > section:nth-child(3) > .row.gtr-25 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: .65rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body.homepage #footer > .container > .row:first-child > section:nth-child(3) > .row.gtr-25 > .col-6 {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+body.homepage #footer .image.fit {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-color: #d1e1d2;
+  box-shadow: 0 5px 12px rgba(16,59,36,.12);
+  transition: transform .24s ease, box-shadow .24s ease, filter .24s ease;
+}
+body.homepage #footer .image.fit img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.12/1;
+  opacity: 0;
+}
+body.homepage #footer .image.fit:hover,
+body.homepage #footer .image.fit:focus-visible {
+  transform: translateY(-4px) scale(1.018);
+  box-shadow: 0 12px 18px rgba(16,59,36,.19);
+  filter: saturate(1.12);
+}
+/* El segundo módulo ocupa una sección oscura, tipo invitación comunitaria. */
+body.homepage #footer > .container > hr {
+  margin: clamp(3rem, 5.2vw, 5.5rem) 0 0;
+  border: 0;
+  height: 0;
+}
+body.homepage #footer > .container > .row:last-of-type {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+body.homepage #footer > .container > .row:last-of-type > .col-12 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+body.homepage #footer .contact {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: clamp(2.3rem, 5vw, 4.3rem) clamp(1.3rem, 5vw, 4rem);
+  border: 1px solid rgba(206,225,196,.19);
+  border-radius: clamp(20px, 3vw, 33px);
+  background:
+    radial-gradient(ellipse at 50% -45%, rgba(123,162,115,.34), transparent 68%),
+    linear-gradient(145deg, rgba(251,251,230,.10), rgba(153,201,158,.035));
+  box-shadow: 0 18px 40px rgba(0,16,12,.1), inset 0 1px 0 rgba(255,255,255,.08);
+  text-align: center;
+}
+body.homepage #footer .contact::before {
+  content: 'LA COMUNIDAD HACE EL PARQUE';
+  display: block;
+  margin-bottom: 1.1rem;
+  color: #e8bf79;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .19em;
+  line-height: 1.5;
+}
+body.homepage #footer .contact header { margin: 0 auto 1rem; }
+body.homepage #footer .contact h3 {
+  max-width: 660px;
+  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.85rem, 3.6vw, 3rem);
+  line-height: 1.19;
+  color: #fff8e6;
+  letter-spacing: -.045em;
+}
+body.homepage #footer .contact p {
+  max-width: 620px;
+  margin: 0 auto 2.1rem;
+  font-size: 1.06rem;
+  line-height: 1.73;
+  color: #dbe9da;
+  text-align: center;
+}
+body.homepage #footer ul.icons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  gap: .65rem;
+  margin: 0 auto;
+  padding: .65rem;
+  border: 1px solid rgba(218,230,211,.17);
+  border-radius: 20px;
+  background: rgba(0,20,12,.15);
+}
+body.homepage #footer ul.icons li { margin: 0; padding: 0; }
+body.homepage #footer ul.icons li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: 1px solid rgba(239,227,189,.16);
+  border-radius: 12px;
+  background: rgba(255,255,255,.055);
+  color: #f5d6a5;
+  text-decoration: none;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, color .22s ease;
+}
+body.homepage #footer ul.icons li a:hover {
+  transform: translateY(-3px);
+  border-color: rgba(248,221,163,.48);
+  background: rgba(236,191,116,.16);
+  color: #fff6e6;
+}
+body.homepage #footer .copyright {
+  margin: 2rem auto 0;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(235,240,219,.13);
+  text-align: center;
+  color: #c4d5c6;
+  font-size: .78rem;
+  line-height: 1.85;
+}
+body.homepage #footer .copyright a { color: #e6d5b3; text-underline-offset: 3px; }
+
+/* =================== DISEÑO ADAPTABLE =================== */
+@media screen and (max-width: 1000px) {
+  body.homepage #footer > .container > .row:first-child {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.15rem;
+  }
+  body.homepage #footer > .container > .row:first-child > section:nth-child(3) { grid-column: 1 / -1; }
+  body.homepage #footer > .container > .row:first-child > section:nth-child(3) > .row.gtr-25 { grid-template-columns: repeat(6, minmax(0,1fr)); }
+}
+@media screen and (max-width: 736px) {
+  body.homepage #footer {
+    padding: 0 1rem 1.7rem;
+  }
+  body.homepage #footer::before { height: 265px; background-position: center 47%; }
+  body.homepage #footer::after {
+    top: 2.2rem;
+    left: 1.4rem;
+    font-size: .66rem;
+    letter-spacing: .09em;
+    padding: .6rem .75rem;
+  }
+  body.homepage #footer > .container { padding-top: 195px; }
+  body.homepage #footer > .container > .row:first-child {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding: 1.6rem 1.25rem;
+    border-radius: 23px;
+  }
+  body.homepage #footer > .container > .row:first-child > section { margin: 0; }
+  body.homepage #footer > .container > .row:first-child > section + section {
+    border-top: 1px solid rgba(32,78,53,.1);
+    padding-top: 1.75rem;
+  }
+  body.homepage #footer > .container > .row:first-child > section:nth-child(3) { grid-column: auto; }
+  body.homepage #footer > .container > .row:first-child > section > header { align-items: flex-start; text-align: left; margin-bottom: .8rem; }
+  body.homepage #footer > .container > .row:first-child > section > header::after { text-align: left; font-size: 1.35rem; }
+  body.homepage #footer > .container > .row:first-child > section:nth-child(3) > .row.gtr-25 { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .58rem; }
+  body.homepage #footer ul.divided > li { font-size: 1rem; }
+  body.homepage #footer .post.stub,
+  body.homepage #footer .post.stub h3 { text-align: left; }
+  body.homepage #footer > .container > hr { margin: 2.3rem 0 0; }
+  body.homepage #footer .contact { padding: 2.4rem 1.25rem; border-radius: 22px; }
+  body.homepage #footer .contact h3 { font-size: clamp(1.7rem, 7vw, 2.35rem); }
+  body.homepage #footer .contact p { font-size: .98rem; }
+  body.homepage #footer ul.icons { gap: .45rem; padding: .45rem; border-radius: 16px; }
+  body.homepage #footer ul.icons li a { width: 2.6rem; height: 2.6rem; border-radius: 10px; }
+  body.homepage .wrapper.style2 article#main > .image.featured { border-radius: 21px 21px 0 0; }
+}
+@media screen and (max-width: 380px) {
+  body.homepage #footer > .container > .row:first-child { padding-left: 1rem; padding-right: 1rem; }
+  body.homepage #footer > .container > .row:first-child > section:nth-child(3) > .row.gtr-25 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.homepage #footer ul.icons li a { width: 2.45rem; height: 2.45rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.homepage #footer .image.fit,
+  body.homepage #footer .post.stub h3 a,
+  body.homepage #footer .post.stub h3 a::after,
+  body.homepage #footer ul.icons li a { transition: none !important; }
+}
+
+/* Iconos sociales de respaldo: este proyecto no incluye los archivos
+   webfonts de Font Awesome; se usan monogramas legibles sin dependencias. */
+body.homepage #footer ul.icons li a.icon::before {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1;
+  text-align: center;
+  text-rendering: geometricPrecision;
+}
+body.homepage #footer ul.icons li a.fa-twitter::before { content: 'X'; }
+body.homepage #footer ul.icons li a.fa-facebook-f::before { content: 'f'; font-size: 1.4rem; }
+body.homepage #footer ul.icons li a.fa-instagram::before { content: '◎'; font-size: 1.65rem; font-weight: 500; }
+body.homepage #footer ul.icons li a.fa-pinterest::before { content: 'P'; font-family: Georgia, serif !important; font-size: 1.25rem; }
+body.homepage #footer ul.icons li a.fa-dribbble::before { content: '◉'; font-size: 1.25rem; font-weight: 400; }
+body.homepage #footer ul.icons li a.fa-linkedin-in::before { content: 'in'; font-size: 1.03rem; }
+
+/* La sexta fotografía muestra un encuadre distinto del parque. */
+body.homepage #footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(6) .image.fit {
+  background-position: 9% 48%;
+}
