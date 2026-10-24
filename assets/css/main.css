@@ -3515,3 +3515,627 @@ body.homepage #features article > p {
   html { scroll-behavior: auto; }
   .button, button, #features article, .carousel article .image img { transition: none !important; }
 }
+
+
+/* ======================================================================
+   PARQUE FORESTAL DE GUAYAQUIL — EDICIÓN VISUAL V2
+   Capa adicional sobre la versión 1. Conserva las clases de Helios,
+   la estructura HTML y los scripts originales del proyecto.
+   ====================================================================== */
+
+:root {
+  --bosque: #183f31;
+  --bosque-profundo: #102b23;
+  --verde: #28724e;
+  --verde-claro: #e4eee4;
+  --hoja: #b9d2ad;
+  --arena: #f8f6ef;
+  --papel: #fffefa;
+  --texto: #41594b;
+  --texto-fuerte: #1a3529;
+  --dorado: #e9b86a;
+  --borde: #dfe8dc;
+  --sombra: 0 18px 44px rgba(20, 54, 37, .12);
+  --accent-gradient: linear-gradient(115deg, #e8b669, #f2cf88);
+  --lift-shadow: 0 22px 48px rgba(17, 58, 38, .17);
+}
+
+html { scroll-padding-top: 2.25rem; }
+body {
+  background: var(--arena);
+  background-image: radial-gradient(circle at 95% 4%, rgba(183, 213, 173, .13), transparent 30%);
+  color: var(--texto);
+  font-size: 17px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { color: #fff; background: #3e7957; }
+
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+h2 { letter-spacing: -.03em; line-height: 1.17; }
+h3 { letter-spacing: -.015em; line-height: 1.28; }
+header > p { line-height: 1.65; }
+a { text-underline-offset: 3px; }
+
+/* ------------------ PORTADA EDITORIAL ------------------ */
+#header {
+  isolation: isolate;
+  overflow: hidden;
+  background-image:
+    linear-gradient(95deg, rgba(7, 38, 28, .88) 0%, rgba(10, 49, 33, .65) 45%, rgba(11, 50, 34, .20) 100%),
+    url("../../images/header.jpeg");
+  background-position: center, center 46%;
+  background-size: cover;
+}
+body.homepage #header {
+  min-height: 660px;
+  height: min(90svh, 940px);
+  padding: 8.5rem clamp(1.5rem, 6vw, 7rem) 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+}
+body.homepage #header:before { display: none; }
+body.homepage #header .inner {
+  display: block;
+  width: min(100%, 800px);
+  max-width: 800px;
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 2.5rem) 0;
+  text-align: left;
+}
+body.homepage #header .inner:before {
+  content: "GUAYAQUIL  /  NATURALEZA Y CULTURA";
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: clamp(1.35rem, 2.8vw, 2.5rem);
+  padding: .48rem .98rem;
+  border: 1px solid rgba(236, 240, 210, .40);
+  border-radius: 999px;
+  background: rgba(19, 73, 50, .35);
+  box-shadow: 0 6px 22px rgba(9, 29, 18, .08);
+  color: #f3deb1;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .155em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+body.homepage #header .inner > header { display: block; }
+body.homepage #header h1 {
+  max-width: 780px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3.5rem, 7.7vw, 7.75rem);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.058em;
+  text-wrap: balance;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, .16);
+}
+body.homepage #header h1 a { color: #fffdf5; }
+body.homepage #header hr {
+  width: 92px;
+  height: 3px;
+  top: 0;
+  margin: 1.9rem 0 1.7rem;
+  background: var(--dorado);
+  border: 0;
+  border-radius: 3px;
+  box-shadow: none;
+}
+body.homepage #header header > p {
+  max-width: 540px;
+  margin: 0;
+  color: #f4f3e9;
+  font-size: clamp(1.08rem, 1.6vw, 1.4rem);
+  line-height: 1.55;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(9, 31, 22, .28);
+}
+body.homepage #header footer { margin: 2.2rem 0 0; text-align: left; }
+#header .button.circled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  min-height: 53px;
+  padding: 1rem 2.5rem;
+  background: var(--accent-gradient);
+  border: 1px solid rgba(255, 255, 255, .3);
+  color: #233826;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 12px 30px rgba(8, 32, 17, .28);
+}
+#header .button.circled:hover,
+#header .button.circled:focus-visible {
+  background: #f5d18a;
+  color: #183b2c;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px rgba(7, 27, 19, .32);
+}
+
+/* ------------------ NAVEGACIÓN ------------------ */
+#nav { padding: 1.35rem 1rem; z-index: 10; }
+#nav > ul {
+  gap: .2rem;
+  padding: .4rem .55rem;
+  background: rgba(13, 52, 36, .81);
+  border: 1px solid rgba(246, 246, 222, .24);
+  box-shadow: 0 12px 34px rgba(11, 36, 23, .19);
+}
+#nav > ul > li > a,
+#nav > ul > li > span {
+  padding: .65rem .97rem;
+  font-size: .86rem;
+  letter-spacing: .01em;
+}
+#nav > ul > li:hover > a,
+#nav > ul > li.active > a,
+#nav > ul > li > a:focus-visible {
+  background: #f1dfb9;
+  color: #193a29;
+}
+
+/* ------------------ BIENVENIDA ------------------ */
+#banner {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(4.4rem, 7vw, 7.2rem) 1.5rem;
+  background:
+    radial-gradient(ellipse at 0% 10%, rgba(174, 205, 161, .17), transparent 43%),
+    radial-gradient(ellipse at 100% 90%, rgba(229, 188, 124, .13), transparent 39%),
+    #fffcf5;
+}
+#banner:before,
+#features > header:before {
+  content: "CONOCE EL PARQUE";
+  display: block;
+  margin: 0 0 1.15rem;
+  color: #2b7655;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: .77rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+#banner > header { max-width: 900px; margin: 0 auto; }
+#banner h2 {
+  max-width: 850px;
+  margin: 0 auto 1.3rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.15vw, 3.75rem);
+  line-height: 1.17;
+  color: var(--bosque);
+}
+#banner header > p {
+  max-width: 700px;
+  font-size: clamp(1rem, 1.45vw, 1.16rem);
+  line-height: 1.85;
+  color: #53695a;
+}
+
+/* ------------------ ATRACTIVOS / ACTIVIDADES ------------------ */
+.carousel {
+  position: relative;
+  padding: clamp(3rem, 5vw, 5rem) 0 clamp(3.3rem, 5vw, 5.4rem);
+  background:
+    linear-gradient(135deg, rgba(222, 237, 218, .96), rgba(245, 247, 232, .97)),
+    #ecf3e6;
+}
+.carousel .reel { padding: .6rem clamp(1.3rem, 4vw, 4rem) 1.7rem; }
+.carousel article {
+  position: relative;
+  width: clamp(295px, 23vw, 358px);
+  min-height: 425px;
+  margin-right: 1.4rem;
+  padding-bottom: 1.6rem;
+  border-radius: 22px;
+  border: 1px solid rgba(37, 94, 62, .10);
+  background: #fffefa;
+  box-shadow: 0 12px 30px rgba(28, 78, 47, .09);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.carousel article:hover {
+  transform: translateY(-8px);
+  border-color: rgba(34, 103, 66, .2);
+  box-shadow: var(--lift-shadow);
+}
+.carousel article:before {
+  content: "EXPERIENCIA";
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 1rem;
+  padding: .28rem .82rem;
+  border-radius: 999px;
+  background: rgba(252, 250, 237, .93);
+  box-shadow: 0 2px 12px rgba(12, 35, 26, .09);
+  color: #1b583d;
+  font-size: .67rem;
+  line-height: 1.55;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+.carousel article .image { margin: 0 0 1.6rem; border-radius: 0; }
+.carousel article .image.featured img {
+  height: 215px;
+  transition: transform .5s ease, filter .5s ease;
+}
+.carousel article:hover .image.featured img {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+.carousel article header { margin: 0 0 .8rem; padding: 0 1.3rem; }
+.carousel article h3 { font-size: 1.3rem; line-height: 1.3; font-weight: 700; }
+.carousel article p { padding: 0 1.5rem; font-size: .98rem; line-height: 1.7; color: #536958; }
+.carousel article h3 a { color: #1c4b36; }
+.carousel article h3 a:hover { color: #228450; }
+.carousel .forward:before, .carousel .backward:before {
+  background-color: rgba(25, 72, 47, .70);
+  box-shadow: 0 4px 16px rgba(25, 72, 47, .24);
+}
+
+/* ------------------ ARTÍCULO SOBRE EL PARQUE ------------------ */
+.wrapper.style2 {
+  padding: clamp(4rem, 7vw, 7.5rem) clamp(1rem, 3vw, 3rem);
+  background:
+    radial-gradient(ellipse at 96% 12%, rgba(227, 191, 138, .17), transparent 35%),
+    #f7f6ef;
+}
+.wrapper.style2 article#main {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+  grid-template-rows: auto 1fr auto;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+  max-width: 1240px;
+  min-height: 510px;
+  padding: 0;
+  border-radius: 28px;
+  background: #fffefa;
+  text-align: left;
+  box-shadow: 0 22px 60px rgba(36, 66, 44, .10);
+}
+.wrapper.style2 article#main > .image.featured {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / 4;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+.wrapper.style2 article#main > .image.featured img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  min-height: 510px;
+  object-fit: cover;
+  object-position: 52% center;
+  transition: transform .65s ease;
+}
+.wrapper.style2 article#main:hover > .image.featured img { transform: scale(1.045); }
+.wrapper.style2 article#main > header {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: clamp(2.3rem, 4vw, 4.5rem) clamp(2rem, 4vw, 4.4rem) 1.15rem;
+  text-align: left;
+}
+.wrapper.style2 article#main > header:before {
+  content: "UN ESPACIO PARA TODOS";
+  display: block;
+  margin-bottom: 1rem;
+  color: #397d57;
+  font-size: .72rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: .16em;
+}
+.wrapper.style2 article#main > header h2 {
+  margin-bottom: 1.1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 2.75vw, 2.85rem);
+  line-height: 1.18;
+  text-align: left;
+  color: var(--bosque);
+}
+.wrapper.style2 article#main > header p {
+  color: #69806f;
+  font-size: 1.04rem;
+  line-height: 1.65;
+  text-align: left;
+}
+.wrapper.style2 article#main > p {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  margin: 0;
+  padding: 0 clamp(2rem, 4vw, 4.4rem);
+  line-height: 1.75;
+  color: #445b4c;
+  text-align: left;
+}
+.wrapper.style2 article#main > footer {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  padding: 1.8rem clamp(2rem, 4vw, 4.4rem) clamp(2.4rem, 4vw, 4.4rem);
+  text-align: left;
+}
+.wrapper.style2 article#main > footer .button { padding: .85rem 1.65rem; }
+
+/* ------------------ INFORMACIÓN DEL PARQUE ------------------ */
+.wrapper.style1 {
+  background:
+    radial-gradient(circle at 5% 100%, rgba(181, 209, 174, .16), transparent 24%),
+    #f5f9f2;
+  padding: clamp(4.2rem, 7vw, 7.1rem) clamp(1rem, 3vw, 3rem) clamp(5rem, 7vw, 7.5rem);
+}
+#features > header { max-width: 800px; margin: 0 auto 2.9rem; }
+#features > header:before { content: "PLANIFICA TU VISITA"; }
+#features > header h2 {
+  margin: 0 0 1rem;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+#features > header p { max-width: 700px; margin: 0 auto; font-size: 1.05rem; line-height: 1.75; }
+body.homepage #features > .row { gap: clamp(1.25rem, 2.2vw, 2rem); }
+body.homepage #features > .row > article.special {
+  position: relative;
+  border-radius: 22px;
+  border: 1px solid rgba(38, 105, 68, .12);
+  background: #fffefa;
+  box-shadow: 0 14px 30px rgba(40, 90, 55, .08);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+body.homepage #features > .row > article.special:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--lift-shadow);
+}
+body.homepage #features article > .image.featured {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 245px;
+  margin-bottom: 1.65rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #dfe8d9;
+  overflow: hidden;
+}
+body.homepage #features article > .image.featured img { display: block; opacity: 0; width: 100%; height: 100%; }
+body.homepage #features article:nth-child(1) > .image.featured { background-image: url('../../images/feria.jpeg'); }
+body.homepage #features article:nth-child(2) > .image.featured { background-image: url('../../images/botes.jpg'); }
+body.homepage #features article:nth-child(3) > .image.featured { background-image: url('../../images/cultura.jpg'); }
+body.homepage #features article > header { padding: 0 clamp(1.2rem, 2vw, 2rem); margin: 0 0 .75rem; }
+body.homepage #features article h3 { font-size: 1.3rem; font-weight: 700; color: #1e4b37; }
+body.homepage #features article > p {
+  padding: 0 clamp(1.2rem, 2vw, 2rem) 2.25rem;
+  font-size: .99rem;
+  line-height: 1.73;
+  color: #536a59;
+}
+
+/* ------------------ FOOTER CON IDENTIDAD ------------------ */
+#footer {
+  padding: clamp(4.5rem, 7vw, 6.5rem) 0 2.6rem;
+  background:
+    radial-gradient(ellipse at 8% 2%, rgba(84, 135, 99, .23), transparent 38%),
+    linear-gradient(142deg, #173e30 0%, #0b271f 88%);
+  color: #e5eee7;
+}
+#footer > .container > .row:first-child > section { padding-bottom: 1rem; }
+#footer > .container > .row:first-child > section > header {
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+#footer > .container > .row:first-child > section > header:after {
+  display: block;
+  margin-top: 1rem;
+  color: #fff4da;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.4;
+}
+#footer > .container > .row:first-child > section:nth-child(1) > header:after { content: "Información útil"; }
+#footer > .container > .row:first-child > section:nth-child(2) > header:after { content: "Enlaces rápidos"; }
+#footer > .container > .row:first-child > section:nth-child(3) > header:after { content: "Galería del parque"; }
+#footer .icon.circled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  line-height: 1;
+  border: 1px solid rgba(238, 241, 221, .18);
+  background: rgba(255, 255, 255, .095);
+  color: #f0c67c;
+  border-radius: 50%;
+}
+#footer ul.divided > li { padding: .88rem 0; color: #deeadf; line-height: 1.6; }
+#footer .post.stub { text-align: left; }
+#footer .post.stub a { color: #e5f1e5; font-size: 1.04rem; }
+#footer .post.stub a:hover { color: #f0c67c; }
+#footer .image.fit {
+  display: block;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, .17);
+  border-radius: 13px;
+  overflow: hidden;
+  background-color: #4d7057;
+  background-size: cover;
+  background-position: center;
+  transition: transform .24s ease, border-color .24s ease;
+}
+#footer .image.fit:hover { transform: scale(1.045); border-color: rgba(255, 236, 188, .5); }
+#footer .image.fit img { display: block; opacity: 0; width: 100%; aspect-ratio: 1.35 / 1; }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(1) .image.fit { background-image: url('../../images/botes.jpg'); }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(2) .image.fit { background-image: url('../../images/fauna.jpeg'); }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(3) .image.fit { background-image: url('../../images/cultura.jpg'); }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(4) .image.fit { background-image: url('../../images/feria.jpeg'); }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(5) .image.fit { background-image: url('../../images/header.jpeg'); }
+#footer > .container > .row:first-child > section:nth-child(3) .col-6:nth-child(6) .image.fit { background-image: url('../../images/wide01.jpeg'); }
+#footer hr { margin: 3rem 0; border-color: rgba(255, 255, 255, .13); }
+#footer .contact { padding-top: .25rem; }
+#footer .contact h3 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.55rem, 2.7vw, 2.3rem); }
+#footer .contact p { max-width: 680px; line-height: 1.75; color: #d4e3d6; }
+#footer ul.icons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .7rem;
+  width: auto;
+  padding: .7rem 1rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  background: rgba(255,255,255,.055);
+}
+#footer ul.icons li { margin: 0; padding: 0; }
+#footer ul.icons li a { color: #f7e2b7; border-radius: 50%; transition: transform .2s, background .2s; }
+#footer ul.icons li a:hover { transform: translateY(-3px); background: rgba(255,255,255,.13); }
+#footer .copyright { margin-top: 2rem; }
+#footer .copyright, #footer .copyright a { color: #b8cfc0; }
+
+/* ------------------ DETALLES INTERACTIVOS ------------------ */
+.button, button, input[type="button"], input[type="submit"], input[type="reset"] {
+  min-height: 43px;
+  box-shadow: 0 7px 20px rgba(24, 75, 46, .16);
+}
+.button:hover, button:hover, input[type="button"]:hover,
+input[type="submit"]:hover, input[type="reset"]:hover { box-shadow: 0 14px 26px rgba(24, 75, 46, .21); }
+:where(a, button, input, textarea, select):focus-visible { outline: 3px solid #d6a54f; outline-offset: 4px; }
+
+/* ------------------ TABLET ------------------ */
+@media screen and (max-width: 1100px) {
+  body.homepage #header { padding-left: 5vw; padding-right: 5vw; }
+  body.homepage #header h1 { font-size: clamp(3.2rem, 8vw, 5.7rem); }
+  .wrapper.style2 article#main { min-height: 480px; }
+  .wrapper.style2 article#main > .image.featured img { min-height: 480px; }
+  .wrapper.style2 article#main > header { padding: 2.2rem 2.3rem 1rem; }
+  .wrapper.style2 article#main > p { padding: 0 2.3rem; }
+  .wrapper.style2 article#main > footer { padding: 1.7rem 2.3rem 2.3rem; }
+}
+@media screen and (max-width: 980px) {
+  #nav > ul > li > a, #nav > ul > li > span { padding: .58rem .68rem; font-size: .8rem; }
+  body.homepage #features > .row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.homepage #features > .row > article.special:last-child { grid-column: 1 / -1; }
+  body.homepage #features article > .image.featured { height: 220px; }
+  .wrapper.style2 article#main { grid-template-columns: 1fr 1fr; }
+}
+
+/* ------------------ MÓVIL ------------------ */
+@media screen and (max-width: 736px) {
+  html { scroll-padding-top: 3rem; }
+  body { font-size: 16px; line-height: 1.65; }
+  body.homepage #header {
+    display: flex;
+    min-height: 620px;
+    height: min(90svh, 780px);
+    padding: 5rem 1.4rem 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-position: center, 52% center;
+  }
+  body.homepage #header .inner { width: 100%; max-width: 520px; padding: 0; text-align: center; }
+  body.homepage #header .inner:before {
+    margin: 0 auto 1.5rem;
+    padding: .45rem .75rem;
+    font-size: .61rem;
+    letter-spacing: .11em;
+  }
+  body.homepage #header h1 {
+    font-size: clamp(2.95rem, 11vw, 4.85rem);
+    line-height: 1.01;
+    letter-spacing: -.055em;
+  }
+  body.homepage #header hr { margin: 1.5rem auto; width: 72px; }
+  body.homepage #header header > p { margin: 0 auto; text-align: center; font-size: 1.04rem; }
+  body.homepage #header footer { text-align: center; margin-top: 1.8rem; }
+  #header .button.circled { min-width: 146px; min-height: 51px; padding: .85rem 1.6rem; }
+  #navButton .toggle:before {
+    margin-left: -43px;
+    width: 86px;
+    height: 38px;
+    line-height: 38px;
+    border-radius: 0 0 12px 12px;
+    background: #173f30;
+    color: #fff9e8;
+    box-shadow: 0 5px 16px rgba(0,0,0,.16);
+  }
+  #navPanel { height: min(72vh, 450px); background: #123a2d; }
+  #navPanel .link { padding: .83rem 1.25rem; border-color: rgba(255,255,255,.1); }
+  #banner { padding: 4.25rem 1.25rem; }
+  #banner:before, #features > header:before { font-size: .68rem; }
+  #banner h2 { font-size: clamp(2rem, 8vw, 2.9rem); }
+  #banner header > p { font-size: 1.03rem; }
+  .carousel { padding: 2.75rem 0 3.25rem; }
+  .carousel .reel { padding: .5rem 1.1rem 1rem; }
+  .carousel article { width: min(81vw, 320px); min-height: 403px; margin-right: 1rem; }
+  .carousel article .image.featured img { height: 195px; }
+  .carousel article h3 { font-size: 1.2rem; }
+  .wrapper.style2 { padding: 3.5rem 1rem; }
+  .wrapper.style2 article#main {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border-radius: 21px;
+  }
+  .wrapper.style2 article#main > .image.featured { height: 255px; margin: 0; }
+  .wrapper.style2 article#main > .image.featured img { min-height: 0; height: 100%; }
+  .wrapper.style2 article#main > header { padding: 2.15rem 1.5rem 1rem; }
+  .wrapper.style2 article#main > header h2 { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+  .wrapper.style2 article#main > header p { font-size: .99rem; }
+  .wrapper.style2 article#main > p { padding: 0 1.5rem; line-height: 1.76; }
+  .wrapper.style2 article#main > footer { padding: 1.7rem 1.5rem 2.1rem; }
+  .wrapper.style2 article#main > footer .button { display: inline-flex; width: auto; padding: .5rem 1.4rem; }
+  .wrapper.style1 { padding: 4rem 1rem 4.7rem; }
+  #features > header { margin-bottom: 2rem; }
+  #features > header h2 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  body.homepage #features > .row { grid-template-columns: 1fr; gap: 1.3rem; }
+  body.homepage #features > .row > article.special:last-child { grid-column: auto; }
+  body.homepage #features article > .image.featured { height: 230px; }
+  body.homepage #features article > p { padding-bottom: 1.8rem; }
+  #footer { padding: 3.6rem 1.2rem 2rem; }
+  #footer > .container > .row:first-child > section > header { text-align: center; }
+  #footer > .container > .row:first-child > section > header:after { font-size: 1.23rem; }
+  #footer > .container > .row:first-child > section { margin-bottom: 2.15rem; }
+  #footer .post.stub { text-align: center; }
+  #footer .contact h3 { font-size: 1.55rem; }
+  #footer .contact p { font-size: .96rem; }
+  #footer ul.icons { gap: .35rem; padding: .55rem .6rem; }
+  #footer ul.icons li a { width: 2.2em; }
+}
+
+/* ------------------ PANTALLAS PEQUEÑAS ------------------ */
+@media screen and (max-width: 390px) {
+  body.homepage #header { padding-left: 1rem; padding-right: 1rem; min-height: 560px; }
+  body.homepage #header h1 { font-size: clamp(2.5rem, 11.5vw, 3.15rem); }
+  body.homepage #header .inner:before { font-size: .55rem; letter-spacing: .07em; }
+  .carousel article { width: 82vw; }
+  .wrapper.style2 article#main > header { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .wrapper.style2 article#main > p { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .wrapper.style2 article#main > footer { padding-left: 1.2rem; padding-right: 1.2rem; }
+}
+
+/* Respeta la preferencia del usuario sobre movimiento reducido. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  #header *, .carousel article, .carousel article img,
+  #features article, #footer .image.fit,
+  .wrapper.style2 article#main img, .button, button { transition: none !important; }
+}
+
